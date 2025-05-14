@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Votopolio yayas</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <nav aria-label="primary nvigation">
+                <div class="logo" tabindex="0">MY VOTOPOLIA</div>
+                <ul>
+                    <li><a href="#abaout">Abaout me</a></li>
+                    <li><a href="#skll">Skill</a></li>
+                    <li><a href="#projeck">Projek</a></li>
+                    <li><a href="#contack">contack</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="conteiner" tabindex="0"></main>
+<section id ="abaout" class="Abaout-me">
+    <h1>halo gais!!!, saya <strong>diyas aqilaalya</strong></h1>   
+    <p>saya anak smk plus pelita nusantara dengan jurusan rpl yang sangat baguss huhuhuh kcauu, dan saya lebih tertarik ke game aja ya karna saya suka yang simpel dan tidak banyak mikir
+        tapi saya tidak bisa yang namanya bikin desain buat game dan saya juga lagi mw membuat game yang bisa di mainkan dengan anak kecil
+    </p>
+</section>
+
+<section id="skll" aria-label="Skills-section">
+    <h2>Skills</h2>
+    <div class="skills-list" role="list">
+    <span class="skill" role="listitem"> HTML5</span>
+    <span class="skill" role="listitem"> CSS3</span>
+    <span class="skill" role="listitem"> JavaScript</span>
+    <span class="skill" role="listitem"> Responsive Design</span>
+    <span class="skill" role="listitem"> Git & GitHub</span>
+    <span class="skill" role="listitem"> Bootstrap</span>
+    </div>
+    </section>
+    
+
+    <!-- projek -->
+
+    <section id ="projeck">
+        <h2>projek akuh</h2>
+        <div class="projeck_list">
+
+            <article class="projeck_item" tabindex="0">
+                <h3>portopolio website</h3>
+                <p>website menampilkan apa bae dah</p>
+                <!-- index.html -->
+                <button onclick="window.location.href='tugas/jamDijital copy'">lihat projek</button>
+                <!-- <a href="tugas/jamDijital copy/index.html/" class="projeck_link" target="_blank" rel="noopener">lihat projeck</a> -->
+            </article>
+
+            <article class="projeck_item" tabindex="0">
+                <h3>to do list</h3>
+                <p>aplikasi daftar tugas interaktif untuk menambah, menghapus, dan memindai tugas sebagai selesai</p>
+                <!-- <a href="#" class="projeck_link" target="_blank" rel="noopener">lihat projeck</a> -->
+                <button onclick="window.location.href='todolist'">lihat projek</button>
+            </article>
+
+            <article class="projeck_item" tabindex="0">
+                <h3>Game tangkap koin</h3>
+                <p> kamu menggerakkan karakter ke kiri dan kanan untuk menangkap koin yang jatuh dari atas.</p>
+                <button onclick="window.location.href='game'">lihat projek</button>
+                <!-- <a href="#" class="projeck_link" target="_blank" rel="noopener">lihat projeck</a> -->
+            </article>
+        </div>
+    </section>
+
+    <!-- bagian kontak -->
+     <section id="contack">
+        <h1>contack mee</h1>
+        <form id="contack_from" novalidate>
+
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" placeholder="nama anda" aria-label="nama anda" required>
+            <div class="eror" id="nama_eror"></div>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email anda" aria-label="email anda" required>
+            <div class="eror" id="email_eror"></div>
+
+            <label for="message">Pesan</label>
+            <textarea type="message" id="message" row="4" placeholder="Tulis Pesan Anda..........." aria-label="pesan anda" required></textarea>
+            <div class="eror" id="nama_eror"></div>
+
+            <button type="submit" aria-label="Kirim pesan">Kirim Pesan</button>
+            <p class="success-msg" id="success-msg" aria-live="polite"></p>
+        </form>
+
+        <footer>
+            &copy; 2025 Diyas anjay SMK PENUS
+        </footer>
+
+        <script src="script.js"></script>
+
+     </section>
+</body>
+</html>
