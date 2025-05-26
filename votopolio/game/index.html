@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tangkap Koin</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f8ff;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    #score {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      justify-content: end;
+    }
+
+    #game {
+      position: relative;
+      width: 400px;
+      height: 500px;
+      margin: 20px auto;
+      border: 3px solid #333;
+      background: #e0f7fa;
+      overflow: hidden;
+    }
+
+    #player {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      bottom: 10px;
+      left: 170px;
+      transition: left 0.1s linear;
+    }
+
+    #player img {
+      width: 100%;
+      height: auto;
+    }
+
+    .coin {
+      width: 30px;
+      height: 30px;
+      background: gold;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Tangkap Koin!</p>
+  <div id="score">Skor: 0</div>
+
+  <div id="game">
+    <div id="player">
+      <img src="download-removebg-preview.png" alt="Pou">
+    </div>
+  </div>
+
+  <script>
+    const game = document.getElementById("game");
+    const player = document.getElementById("player");
+    const scoreDisplay = document.getElementById("score");
+
+    let score = 0;
+
+    // Gerak karakter pakai hover (mouse)
+    game.addEventListener("mousemove", (e) => {
+      const rect = game.getBoundingClientRect();
+      let mouseX = e.clientX - rect.left;
+      let playerX = mouseX - 30; // agar tengah
+
+      if (playerX < 0) playerX = 0;
+      if (playerX > 340) playerX = 340;
+
+      player.style.left = playerX + "px";
+    });
+
+    // Buat koin jatuh
+    function createCoin() {
+      const coin = document.createElement("div");
+      coin.classList.add("coin");
+      coin.style.left = Math.floor(Math.random() * 370) + "px";
+      game.appendChild(coin);
+
+      let coinTop = 0;
+      const fall = setInterval(() => {
+        coinTop += 5;
+        coin.style.top = coinTop + "px";
+
+        const coinLeft = parseInt(coin.style.left);
+        const playerLeft = parseInt(player.style.left);
+
+        if (
+          coinTop > 430 &&
+          coinLeft + 30 > playerLeft &&
+          coinLeft < playerLeft + 60
+        ) {
+          score++;
+          scoreDisplay.textContent = "Skor: " + score;
+          coin.remove();
+          clearInterval(fall);
+        }
+
+        if (coinTop > 500) {
+          coin.remove();
+          clearInterval(fall);
+        }
+      }, 30);
+    }
+
+    // Munculkan koin setiap 1 detik
+    setInterval(createCoin, 1000);
+  </script>
+
+</body>
+</html>
